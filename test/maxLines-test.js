@@ -62,6 +62,12 @@ describe("jQuery.maxLines", function() {
 		plugin.paddingCompensation.should.equal(true);
 	});
 
+	it ("Should compensate for padding-bottom before zeroing it out!", function() {
+		$el.css('padding-bottom', '99px');
+		$el.maxLines(9);
+		$el.css('margin-bottom').should.not.equal('0px');
+	});
+
 	it ("Can be passed a second value of 'false' to disable padding compensation!", function() {
 		$el.maxLines(3, false);
 		plugin.paddingCompensation.should.equal(false);

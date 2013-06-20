@@ -1,5 +1,5 @@
 /*
-	jquery.maxLines plugin v1.0
+	jquery.maxLines plugin v1.1
 	---
 	https://github.com/greypants/jQuery.maxLines
 */
@@ -25,15 +25,15 @@
 			var lineHeight = this.measureLineHeight();
 			var maxHeight = (this.maxLines * lineHeight) + 'px';
 
+			if(this.paddingCompensation) {
+				this.compensateForPadding();
+			}
+
 			this.$el.css({
 				'max-height': maxHeight,
 				'overflow': 'hidden',
 				'padding-bottom': '0'
 			});
-
-			if(this.paddingCompensation) {
-				this.compensateForPadding();
-			}
 		},
 
 		compensateForPadding: function() {
