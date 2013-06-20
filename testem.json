@@ -1,0 +1,10 @@
+{
+	"framework": "mocha",
+	"src_files": [
+		"lib/jquery.min.js",
+		"lib/chai.js",
+		"test/spec_helper.js",
+		"test/*-test.js",
+		"jquery.maxLines.js"
+	]
+}
